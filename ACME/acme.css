@@ -1,0 +1,54 @@
+header {
+    background-color: #c4c4c4;
+    font-size: 16px;
+    padding: 10px;
+    border-bottom: 1px solid black;
+  }
+
+button {
+      background-color: #2A4CB2;
+      padding: 10px;
+      margin: 10px;
+      color: white;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+  }
+
+nav {
+    float: right;
+    text-shadow: 0 0 2px black;
+  }
+
+a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: 1px black;
+    font-size: 18px;
+  }
+
+main {
+  margin: 40px 30px;
+  border-bottom: 1px gray;
+  border-radius: 5px;
+  padding: 10px 30px;
+  background: white;
+  box-shadow: 0 0 10px 0 gray;
+  }
+
+body {
+    font-family: "Lucida Grande";
+    background-image: url("background.png");
+    margin: 0;
+    text-align: left;
+  }
+
+footer {
+  border-top: 1px solid white;
+  box-shadow: 0 -1px 0 #d2d2d2;
+  margin: 40px 30px;
+  text-align: center;
+  color: gray;
+  }
