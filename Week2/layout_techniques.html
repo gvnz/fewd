@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+
+    <meta charset="utf-8">
+    <title>CSS Layout</title>
+  </head>
+  <body>
+
+    <h1>CSS Layout</h1>
+
+    <h2>Technique #1: Table</h2>
+    <table>
+      <td>chocolate</td>
+      <td>cookies</td>
+      <td>ice cream</td>
+    </table>
+
+    <h2>Technique #2: Float</h2>
+    <ul>
+      <li>red</li>
+      <li>green</li>
+      <li>white</li>
+    </ul>
+
+    <h2>Technique #3: Flexbox</h2>
+
+    <main>
+      <section>Column 1</section>
+      <section>Column 200</section>
+      <section>Column 300000</section>
+    </main>
+
+    <h2>Flexbox 1/4 - 2/4</h2>
+
+    <main>
+      <section class="third">Column 1</section>
+      <section>Column 200</section>
+      <section>Column 300000</section>
+    </main>
+
+    <h2>Flexbox - Sidebar</h2>
+
+    <header>
+      <article>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel itaque possimus at eligendi voluptatum aperiam quibusdam, et sapiente rem? Eos numquam molestiae odit, voluptas minima illum eum. Atque, fugiat, soluta.
+      </article>
+      <div class="sidebar">
+        Sidebar
+      </div>
+    </header>
+
+
+
+<style>
+body {
+  margin: 20px;
+}
+h2 {
+  margin: 10px;
+}
+td {
+  background: #AACCAA;
+  padding: 20px;
+}
+/* Float, parent styles: */
+ul {
+  overflow: hidden;
+}
+/* Float, child styles: */
+li {
+  float: left;
+  background: lightblue;
+  border: 1px solid blue;
+  padding: 20px;
+}
+main{
+  display: flex;
+}
+section {
+  padding: 10px;
+  background: #AACCAA;
+  border: 1px solid black;
+  flex: 1;
+}
+
+.third {
+  flex: 2;
+}
+
+header {
+  display: flex;
+}
+
+article {
+  flex: 1;
+}
+
+.sidebar {
+  width: 200px;
+}
+
+</style>
+
+</body>
+</html>
