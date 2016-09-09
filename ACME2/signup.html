@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="acme.css">
+  </head>
+  <body>
+    <header>
+      <a href="acme2.html"><img src="acme-corp.jpg" alt="Anvil Corp" width="300" height="80"/></a>
+      <nav>
+        <a href="products.html">Products</a>
+        <a href="signup.html"><button>Sign Up</button></a>
+      </nav>
+    </header>
+    <main>
+      <h1>Sign Up</h1>
+      <form action="acme2.html" method:"post"></form>
+      <fieldset>
+        <div class="form-row">
+          <label for="first-name">First Name</label>
+          <input type="text" name="first-name" id="first-name" placeholder="Donald">
+        </div>
+        <div class="form-row">
+          <label for="last-name">Last Name</label>
+          <input type="text" name="last-name" id="last-name" placeholder="Duck">
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="donald@theduck.acme">
+        </div>
+        <div class="form-row">
+          <label for="password">Password</label>
+          <input type="text" name="password" id="password" placeholder="let's keep a secret">
+        </div>
+        <div class="form-row">
+          <label for="survey">How did you hear about us?</label>
+          <select name="survey" id="survey">
+            <option value="Looney Tunes">Looney Tunes</option>
+            <option value="Road Runner">Road Runner</option>
+            <option value="Bugs Bunny">Bugs Bunny</option>
+            <option value="Daffy Duck">Daffy Duck</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <input type="checkbox" class="service-terms">
+          <label for="service-terms">Agree to our Terms & Conditions</label>
+        </div>
+        <div class"form-row">
+        <button>Save</button>
+        </div>
+      </fieldset>
+    </main>
+    <footer>
+      <p>Copyright, 2015</p>
+    </footer>
+    <script src="acme.js"></script>
+  </body>
+</html>

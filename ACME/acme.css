@@ -20,6 +20,42 @@ nav {
     text-shadow: 0 0 2px black;
   }
 
+div {
+  display: flex;
+  border-bottom: 1px solid gray;
+  padding: 15px;
+}
+
+article {
+  display: inline-block;
+  margin: 15px;
+}
+
+.product-one a {
+    color: #2A4CB2;
+    padding: 10px;
+}
+
+.product-two a {
+    color: #2A4CB2;
+    padding: 10px;
+}
+
+.product_three a {
+    color: #2A4CB2;
+    padding: 10px;
+}
+
+.product-three{
+  border-bottom: 0;
+}
+.product-pics {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 5px;
+  background-color: rgb(238, 237, 241);
+}
+
 a {
     color: white;
     font-size: 18px;
