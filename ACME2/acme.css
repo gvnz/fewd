@@ -62,10 +62,20 @@ article {
   display: block;
 }
 
-input {
-  float: center;
+label {
+  display: inline-block;
+  min-width: 200px;
 }
 
+select {
+  display: block;
+  margin-top: 10px;
+}
+
+main img {
+  width: 200px;
+  height: 150px;
+}
 fieldset {
   margin: 0;
   border: 0;

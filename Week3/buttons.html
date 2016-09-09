@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Buttons</title>
+    <style>
+    .button {
+      font-family: inherit;
+      font-size: 15px;
+      border: none;
+      border-radius: 5px;
+      margin: 10px;
+      padding: 10px;
+      background: blue;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button-small {
+      font-size: 8px;
+      border-radius: 2px;
+      margin: 5px;
+      padding: 5px;
+    }
+    .button-danger  {
+      background: red;
+    }
+
+
+
+    </style>
+  </head>
+  <body>
+    <a href="#" class="button">Click Me</a>
+    <button type="button" name="button" class="button">Click Me</button>
+    <input type="submit" value="Click Me" class="button button-small">
+    <br>
+    <br>
+    <br>
+    <a href="#" class="button button-danger button-small">Danger, don't click here</a>
+  </body>
+</html>
