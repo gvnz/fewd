@@ -62,6 +62,10 @@ article {
   display: block;
 }
 
+input {
+  float: center;
+}
+
 fieldset {
   margin: 0;
   border: 0;
