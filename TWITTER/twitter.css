@@ -5,7 +5,7 @@
 body {
     font-family: "Lucida Grande";
     background-image: url("../ACME/background.png");
-    margin: 0;
+    margin: 0 0 40px 0;
     min-width: 800px;
   }
 
@@ -97,6 +97,8 @@ a {
   border-bottom: 0;
   font-weight: bolder;
   display: block;
+  color: green;
+  font-size: 16px;
 }
 
 
@@ -121,8 +123,24 @@ ul {
 
 li {
   display: inline-block;
-  padding: 15px;
-  color: gray;
+  padding: 10px;
+  margin: 0;
+}
+
+a {
+  color: #a9a5a5;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+button:hover {
+  font-weight: bold;
+}
+
+.likebutton:hover {
+  color: blue;
 }
 
 .lastdiv  {
@@ -130,7 +148,7 @@ li {
   margin-bottom: 0;
 }
 
-a {
+a.likebutton {
   color: green;
   font-size: 16px;
 }
@@ -158,4 +176,8 @@ button {
   position: relative;
   bottom: 5px;
   left: -10px;
+}
+
+ul {
+  margin: 0 auto;
 }
