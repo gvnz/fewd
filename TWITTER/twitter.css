@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: "Lucida Grande";
+    background-image: url("../ACME/background.png");
+    margin: 0;
+    min-width: 800px;
+  }
+
+header {
+  background: linear-gradient(to bottom, #60da9b, #419369);
+  color: white;
+  padding: 0 30px;
+  height: 70px;
+}
+
+h1 {
+  display: inline-block;
+  margin: 15px;
+}
+
+nav {
+  display: inline;
+}
+
+.signup, .login {
+  float: right;
+  margin: 5px;
+}
+
+main {
+  background: white;
+  margin: 50px 100px;
+  border-radius: 10px;
+  padding: 15px 40px;
+  box-shadow: 5px 5px 5px 5px rgb(231, 235, 231);
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  border: 1px solid rgb(232, 229, 229);
+  margin: 0 10px 30px 0;
+    box-shadow: 1px 1px 1px 0.3px rgb(231, 235, 231);
+}
+
+
+div {
+  display: flex;
+  margin: 10px 15px 25px 0;
+  border-bottom: 1px solid rgb(236, 233, 233);
+
+}
+
+textarea {
+  width: 99%;
+  height: 90px;
+  border-radius: 5px;
+  border: 2px solid rgb(241, 239, 236);
+  font-size: 18px;
+}
+
+
+section {
+  flex: 1;
+  position: relative;
+}
+
+.c1 {
+  overflow: auto;
+}
+
+
+.row div {
+  bottom: 29px;
+  left: 0;
+}
+
+p  {
+  margin: 0;
+  font-size: 18px;
+  position: absolute;
+}
+
+a {
+  text-decoration: none;
+  padding: 0 2px 0 0;
+}
+
+.like {
+  margin: 0;
+  position: absolute;
+  border-bottom: 0;
+  font-weight: bolder;
+}
+
+
+.maxlenght {
+  position: absolute;
+  bottom: 65px;
+  right: 20px;
+  font-size: 10px;
+}
+
+input {
+  width: 100%;
+  height: 60px;
+}
+
+ul {
+  margin: 0 auto;
+  width: 700px;
+  padding: 0;
+}
+
+
+li {
+  display: inline-block;
+  padding: 15px;
+  color: gray;
+}
+
+.lastdiv  {
+  border: 0;
+  margin-bottom: 0;
+}
+
+a {
+  color: green;
+  font-size: 16px;
+}
+
+span {
+  color: rgb(200, 192, 195);
+  font-weight: lighter;
+}
+
+button {
+  color: white;
+  background: linear-gradient(180deg, #42a383, #236f48);
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 0;
+  margin: 10px;
+  position: relative; bottom: -10px; left: 10px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+.publish {
+  position: relative;
+  bottom: 5px;
+  left: -10px;
+}
