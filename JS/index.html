@@ -167,6 +167,8 @@
       document.querySelector(".full-name").value = a + b;
 
     //Problem 3
+/*
+// collum A1
 
       var a1 = parseInt(document.querySelector(".a1").value);
       var b0 = parseInt(document.querySelector(".b0").value);
@@ -188,7 +190,7 @@
       var f0 = parseInt(document.querySelector(".f0").value);
       document.querySelector(".f1").value = a1 * f0;
 
-
+// column A2
 
       var a2 = parseInt(document.querySelector(".a2").value);
       var b0 = parseInt(document.querySelector(".b0").value);
@@ -210,68 +212,119 @@
       var f0 = parseInt(document.querySelector(".f0").value);
       document.querySelector(".f2").value = a2 * f0;
 
+// collum A3
 
-
-
-      var a1 = parseInt(document.querySelector(".a1").value);
+      var a3 = parseInt(document.querySelector(".a3").value);
       var b0 = parseInt(document.querySelector(".b0").value);
-      document.querySelector(".b1").value = a1 * b0;
+      document.querySelector(".b3").value = a3 * b0;
 
-      var a1 = parseInt(document.querySelector(".a1").value);
-      var b0 = parseInt(document.querySelector(".b0").value);
-      document.querySelector(".b1").value = a1 * b0;
+      var a3 = parseInt(document.querySelector(".a3").value);
+      var c0 = parseInt(document.querySelector(".c0").value);
+      document.querySelector(".c3").value = a3 * c0;
 
-      var a1 = parseInt(document.querySelector(".a1").value);
-      var b0 = parseInt(document.querySelector(".b0").value);
-      document.querySelector(".b1").value = a1 * b0;
+      var a3 = parseInt(document.querySelector(".a3").value);
+      var d0 = parseInt(document.querySelector(".d0").value);
+      document.querySelector(".d3").value = a3 * d0;
 
-      var a1 = parseInt(document.querySelector(".a1").value);
-      var b0 = parseInt(document.querySelector(".b0").value);
-      document.querySelector(".b1").value = a1 * b0;
+      var a3 = parseInt(document.querySelector(".a3").value);
+      var e0 = parseInt(document.querySelector(".e0").value);
+      document.querySelector(".e3").value = a3 * e0;
 
-      var a1 = parseInt(document.querySelector(".a1").value);
-      var b0 = parseInt(document.querySelector(".b0").value);
-      document.querySelector(".b1").value = a1 * b0;
+      var a3 = parseInt(document.querySelector(".a3").value);
+      var f0 = parseInt(document.querySelector(".f0").value);
+      document.querySelector(".f3").value = a3 * f0;
 
-      var a1 = parseInt(document.querySelector(".a1").value);
-      var b0 = parseInt(document.querySelector(".b0").value);
-      document.querySelector(".b1").value = a1 * b0;
+// collum A4
 
-      var a1 = parseInt(document.querySelector(".a1").value);
+      var a4 = parseInt(document.querySelector(".a4").value);
       var b0 = parseInt(document.querySelector(".b0").value);
-      document.querySelector(".b1").value = a1 * b0;
+      document.querySelector(".b4").value = a4 * b0;
 
-      var a1 = parseInt(document.querySelector(".a1").value);
-      var b0 = parseInt(document.querySelector(".b0").value);
-      document.querySelector(".b1").value = a1 * b0;
+      var a4 = parseInt(document.querySelector(".a4").value);
+      var c0 = parseInt(document.querySelector(".c0").value);
+      document.querySelector(".c4").value = a4 * c0;
 
-      var a1 = parseInt(document.querySelector(".a1").value);
-      var b0 = parseInt(document.querySelector(".b0").value);
-      document.querySelector(".b1").value = a1 * b0;
+      var a4 = parseInt(document.querySelector(".a4").value);
+      var d0 = parseInt(document.querySelector(".d0").value);
+      document.querySelector(".d4").value = a4 * d0;
 
-      var a1 = parseInt(document.querySelector(".a1").value);
-      var b0 = parseInt(document.querySelector(".b0").value);
-      document.querySelector(".b1").value = a1 * b0;
+      var a4 = parseInt(document.querySelector(".a4").value);
+      var e0 = parseInt(document.querySelector(".e0").value);
+      document.querySelector(".e4").value = a4 * e0;
 
-      var a1 = parseInt(document.querySelector(".a1").value);
-      var b0 = parseInt(document.querySelector(".b0").value);
-      document.querySelector(".b1").value = a1 * b0;
+      var a4 = parseInt(document.querySelector(".a4").value);
+      var f0 = parseInt(document.querySelector(".f0").value);
+      document.querySelector(".f4").value = a4 * f0;
 
-      var a1 = parseInt(document.querySelector(".a1").value);
-      var b0 = parseInt(document.querySelector(".b0").value);
-      document.querySelector(".b1").value = a1 * b0;
+// collum A5
 
-      var a1 = parseInt(document.querySelector(".a1").value);
-      var b0 = parseInt(document.querySelector(".b0").value);
-      document.querySelector(".b1").value = a1 * b0;
 
-      var a1 = parseInt(document.querySelector(".a1").value);
+      var a5 = parseInt(document.querySelector(".a5").value);
       var b0 = parseInt(document.querySelector(".b0").value);
-      document.querySelector(".b1").value = a1 * b0;
+      document.querySelector(".b5").value = a5 * b0;
 
-      var a1 = parseInt(document.querySelector(".a1").value);
-      var b0 = parseInt(document.querySelector(".b0").value);
-      document.querySelector(".b1").value = a1 * b0;
+      var a5 = parseInt(document.querySelector(".a5").value);
+      var c0 = parseInt(document.querySelector(".c0").value);
+      document.querySelector(".c5").value = a5 * c0;
+
+      var a5 = parseInt(document.querySelector(".a5").value);
+      var d0 = parseInt(document.querySelector(".d0").value);
+      document.querySelector(".d5").value = a5 * d0;
+
+      var a5 = parseInt(document.querySelector(".a5").value);
+      var e0 = parseInt(document.querySelector(".e0").value);
+      document.querySelector(".e5").value = a5 * e0;
+
+      var a5 = parseInt(document.querySelector(".a5").value);
+      var f0 = parseInt(document.querySelector(".f0").value);
+      document.querySelector(".f5").value = a5 * f0;
+
+
+*/
+
+// function multiply
+// multiply(".a1", ".b0", ".b1")
+
+function multiply(row, column, output) {
+  var a1 = parseInt(document.querySelector(column).value);
+  var b0 = parseInt(document.querySelector(row).value);
+  document.querySelector(output).value = a1 * b0;
+}
+
+//ROW1
+multiply(".a1", ".b0", ".b1")
+multiply(".a2", ".b0", ".b2")
+multiply(".a3", ".b0", ".b3")
+multiply(".a4", ".b0", ".b4")
+multiply(".a5", ".b0", ".b5")
+
+//ROW2
+multiply(".a1", ".c0", ".c1")
+multiply(".a2", ".c0", ".c2")
+multiply(".a3", ".c0", ".c3")
+multiply(".a4", ".c0", ".c4")
+multiply(".a5", ".c0", ".c5")
+
+//ROW3
+multiply(".a1", ".d0", ".d1")
+multiply(".a2", ".d0", ".d2")
+multiply(".a3", ".d0", ".d3")
+multiply(".a4", ".d0", ".d4")
+multiply(".a5", ".d0", ".d5")
+
+//ROW4
+multiply(".a1", ".e0", ".e1")
+multiply(".a2", ".e0", ".e2")
+multiply(".a3", ".e0", ".e3")
+multiply(".a4", ".e0", ".e4")
+multiply(".a5", ".e0", ".e5")
+
+//ROW5
+multiply(".a1", ".f0", ".f1")
+multiply(".a2", ".f0", ".f2")
+multiply(".a3", ".f0", ".f3")
+multiply(".a4", ".f0", ".f4")
+multiply(".a5", ".f0", ".f5")
 
 
 
