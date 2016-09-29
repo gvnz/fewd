@@ -291,6 +291,23 @@ function multiply(row, column, output) {
   document.querySelector(output).value = a1 * b0;
 }
 
+
+multiplyRow("b");
+multiplyRow("c");
+multiplyRow("d");
+multiplyRow("e");
+multiplyRow("f");
+
+function multiplyRow(row) {
+  multiply(".a1", "." + row + "0", "." + row + "1");
+  multiply(".a2", "." + row + "0", "." + row + "2");
+  multiply(".a3", "." + row + "0", "." + row + "3");
+  multiply(".a4", "." + row + "0", "." + row + "4");
+  multiply(".a5", "." + row + "0", "." + row + "5");
+}
+
+
+/*
 //ROW1
 multiply(".a1", ".b0", ".b1")
 multiply(".a2", ".b0", ".b2")
@@ -326,7 +343,7 @@ multiply(".a3", ".f0", ".f3")
 multiply(".a4", ".f0", ".f4")
 multiply(".a5", ".f0", ".f5")
 
-
+*/
 
 
     </script>

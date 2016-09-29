@@ -56,6 +56,7 @@
           </div>
         </section>
       </div>
+      <hr>
 
     </main>
     <footer>
@@ -75,7 +76,54 @@
   </body>
 
 
+<script>
 
+// textarea addEventListeer "keydown" var remaining = 140 - textarea.value.length
+
+//defining the elements
+function createTweet(text, image) {
+  var p = document.createElement("p");
+  var like = document.createElement("div");
+  var likeButton = document.createElement("a");
+  var likeCount = document.createElement("span");
+  var newRow = document.createElement ("section");
+  var img = document.createElement("img");
+  var mainDiv = document.createElement("div");
+
+  p.textContent = text;
+
+  likeButton.textContent = "Like";
+  likeCount.textContent = "(0)";
+
+  mainDiv.appendChild(img);
+  mainDiv.appendChild(newRow);
+  newRow.appendChild(p);
+  newRow.appendChild(like);
+  like.appendChild(likeButton);
+  like.appendChild(likeCount);
+
+document.querySelector("main").appendChild(mainDiv);
+
+  img.setAttribute("src", image);
+  newRow.setAttribute("class", "row");
+  like.setAttribute("class", "like");
+  likeButton.setAttribute("class", "likebutton");
+  likeButton.setAttribute("href", "#");
+  likeCount.setAttribute("class", "count");
+}
+
+// function to create tweet when TWEET is clicked
+var button = document.querySelector(".publish");
+
+
+function newComment(event) {
+  event.preventDefault();
+  createTweet(document.querySelector("textArea").value, "pic2.jpeg");
+}
+
+button.addEventListener("click", newComment);
+
+</script>
 
 
 </html>

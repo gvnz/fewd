@@ -1,0 +1,32 @@
+<div id="container">
+  <div class="comment">
+    This is a comment!
+  </div>
+</div>
+
+
+<script type="text/javascript">
+var button = document.querySelector("button");
+
+function makeASurpriseComment(event){
+  event.preventDefault();
+  createComment("Surprise!!!")
+}
+
+button.addEventListener("click", makeASurprise);
+
+function createComment(commentContent) {
+// creating the comment div
+var commentDiv = document.createElement('div');
+
+// setting the text of the div
+comentDiv.textContent = "This is the second comment!"
+
+// adding a cllas to the div of "comment"
+// commentDiv.setAttribute("class", "comment");
+commentDiv.classList.add('comment');
+
+var parent = document.querySelector("#container");
+parent.appendChild(commentDiv);
+}
+</script>
