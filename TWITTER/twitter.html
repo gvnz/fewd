@@ -23,7 +23,7 @@
         <section class="c1">
           <textarea placeholder="What's tweeting?"></textarea>
           <span class="maxlenght">140</span>
-          <button href="#" class="publish">Tweet</button>
+          <button href="" class="publish">Tweet</button>
         </section>
       </div>
       <div>
@@ -31,8 +31,8 @@
         <section class="row">
           <p>Man, were you sleep or something? It's easy as 1, 2, 3 for me. Let's meet tomorrow before class and I will teach you what I know ;) #iknowstuff #millenialsrule</p>
           <div class="like">
-            <a class="likebutton" href="#">Like</a>
-            <span class="count">(8)</span>
+            <a class="likebutton" href="">Like</a>
+            (<span class="count">0</span>)
           </div>
         </section>
       </div>
@@ -41,8 +41,8 @@
         <section class="row">
           <p>I didn't quite grasp, dude. It was like english-greek to me. But that's just me. I know other people got the gist of it. #clueless #slobbering</p>
           <div class="like">
-            <a class="likebutton" href="#">Like</a>
-            <span class="count">(12)</span>
+            <a class="likebutton" href="">Like</a>
+            (<span class="count">0</span>)
           </div>
         </section>
       </div>
@@ -51,8 +51,8 @@
         <section class="row">
           <p>Hey guys! Whattup?! Did anyone understand the class about JavaScript? Anyone that could help me with that? #javascript #help #wannalearn</p>
           <div class="like">
-            <a class="likebutton" href="#">Like</a>
-            <span class="count">(5)</span>
+            <a class="likebutton" href="">Like</a>
+            (<span class="count">0</span>)
           </div>
         </section>
       </div>
@@ -122,6 +122,28 @@ function newComment(event) {
 }
 
 button.addEventListener("click", newComment);
+
+// LIKE FEATURE
+// creating variables
+var likeButton = document.querySelector(".likebutton");
+var likeCount = document.querySelector(".count");
+// the var likeLink will be needed to create the event "click", linking it to the function like
+// the var likeCount will be used in the function like, to add +1
+
+// creating the event for the var likeLink and opening up the way for the function like
+likeButton.addEventListener("click", like);
+
+// creating the function for the counter -> adding +1
+function like(event) {
+
+  event.preventDefault();
+  console.log(likeCount)
+// event.preventDefault() is a default line in functions
+likeCount.textContent = parseInt(likeCount.textContent) + 1;
+// this line gets the current content of likeCount and adds 1 to it everytime the function is called (click)
+// parseInt is basically for transforming the content into whole numbers
+}
+
 
 </script>
 

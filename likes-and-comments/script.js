@@ -10,7 +10,7 @@ var likeCount = document.querySelector(".like-count");
 likeLink.addEventListener("click", like);
 
 // creating the function for the counter -> adding +1
-function like(event) {
+function like() {
   event.preventDefault();
 // event.preventDefault() is a default line in functions
 likeCount.textContent = parseInt(likeCount.textContent) + 1;
