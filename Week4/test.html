@@ -1,0 +1,57 @@
+<html>
+  <style>
+    div {
+      display: block;
+    }
+  </style>
+  <body>
+
+  </body>
+  <div>
+    <input type="number" id="number1">
+    <p>+</p>
+    <input type="number" id="number2">
+    <button>sum</button>
+    <p class="para">
+    </p>
+  </div>
+
+</html>
+
+<script>
+
+  /* the three-line calculator
+  var a = parseInt(prompt("give me a number"));
+  var b = parseInt(prompt("give another number"));
+  alert(a - b);
+  */
+
+  // gets an input for the first number
+  var a = document.querySelector("#number1");
+  // gets another input for the second number
+  var b = document.querySelector("#number2");
+  // get the button and store it in a variable
+  var button = document.querySelector("button")
+  // get the p that will be added
+  var p = document.querySelector(".para");
+  // add and eventListener to the button so that
+  // when its clicked the add function is called
+  button.addEventListener("click", add);
+  // click the sum button (FUNCTION):
+  // add the two numbers and display the sum
+  function add() {
+  // prevent the default action
+  // a must when declaring an event handler function
+  event.preventDefault();
+  // grab the value of a and transform it into a intenger
+  a = parseInt(a.value);
+  // grab the value of b and transform it into a intenger
+  b = parseInt(b.value);
+  // add a + b and transform it into a p
+  p.textContent = a + b
+  }
+  // result: displays the sum of the two previous numbers
+
+
+
+</script>

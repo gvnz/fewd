@@ -1,0 +1,34 @@
+<html>
+<body>
+  <main>
+  <button>click me</button>
+</main>
+  <script>
+//create the behavior
+
+// create the function
+
+// create an eventListener
+
+
+
+function push() {
+  alert("I was clicked");
+
+  var newSpan = document.createElement("span");
+
+  newSpan.textContent = "you clicked me";
+
+  var main = document.querySelector("main");
+
+  main.appendChild(newSpan);
+
+}
+
+document.querySelector("button").addEventListener("click", push);
+
+
+  </script>
+
+</body>
+</html>

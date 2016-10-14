@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title>Todo List</title>
+   <link rel="stylesheet" href="todo.css" media="screen" title="no title" charset="utf-8">
+ </head>
+ <header>
+   <h1>Today's To Dos</h1>
+   <span class="todoCount"><span class="todoNumber">0</span> todos</span>
+ </header>
+ <body>
+  <main>
+    <form class="todo-inputs" method="post">
+      <input class="userWrites" type="text" name="text" placeholder="What do you need to today?" value="">
+      <input class="button" type="submit" name="button" value="Create">
+    </form>
+    <ul>
+       <!-- <li>
+         <label>
+           <input type="checkbox">
+           <span>Buy some milk</span>
+         </label>
+       </li> -->
+    </ul>
+    <span class="nothing">Nothing to do</span>
+  </main>
+ </body>
+
+
+ <script>
+
+   var button = document.querySelector(".button");
+   button.addEventListener("click", newItem);
+   var form = document.querySelector("form");
+
+
+
+   function newItem(event) {
+     event.preventDefault();
+
+     var items = document.querySelector(".userWrites").value;
+     items = items.split(",");
+     console.log('items:', items);
+     for(var j = 0; j < items.length; j++) {
+
+     var newLi = document.createElement("li");
+     var newLabel = document.createElement("label");
+     var newInput = document.createElement("input");
+     newInput.setAttribute("type", "checkbox");
+     var newSpan = document.createElement("span");
+     console.log(items[j]);
+     newSpan.textContent = items[j].trim();
+
+     var nothing = document.querySelector(".nothing");
+     nothing.style.display = "none";
+
+     document.querySelector("ul").appendChild(newLi);
+
+     newLi.appendChild(newLabel);
+     newLabel.appendChild(newInput);
+     newLabel.appendChild(newSpan);
+
+     var todoCount = document.querySelector(".todoNumber");
+     todoCount.textContent = ++i;
+     }
+
+    form.reset();
+   };
+   var i = 0;
+
+ </script>
+
+
+</html>

@@ -81,32 +81,34 @@
 // textarea addEventListeer "keydown" var remaining = 140 - textarea.value.length
 
 //defining the elements
-function createTweet(text, image) {
-  var p = document.createElement("p");
-  var like = document.createElement("div");
-  var likeButton = document.createElement("a");
-  var likeCount = document.createElement("span");
-  var newRow = document.createElement ("section");
-  var img = document.createElement("img");
+  function createTweet(text, image) {
   var mainDiv = document.createElement("div");
+  var img = document.createElement("img");
+  var newRow = document.createElement("section.row");
+  var p = document.createElement("p");
+  var likeDiv = document.createElement("div.like");
+  var likeButton = document.createElement("a.likebutton");
+  var likeCount = document.createElement("span.count");
 
   p.textContent = text;
-
   likeButton.textContent = "Like";
   likeCount.textContent = "(0)";
+
+  document.querySelector("main").appendChild(mainDiv);
+
 
   mainDiv.appendChild(img);
   mainDiv.appendChild(newRow);
   newRow.appendChild(p);
-  newRow.appendChild(like);
-  like.appendChild(likeButton);
-  like.appendChild(likeCount);
+  newRow.appendChild(likeDiv);
+  likeDiv.appendChild(likeButton);
+  likeDiv.appendChild(likeCount);
 
-document.querySelector("main").appendChild(mainDiv);
+
 
   img.setAttribute("src", image);
   newRow.setAttribute("class", "row");
-  like.setAttribute("class", "like");
+  mainDiv.setAttribute("class", "like");
   likeButton.setAttribute("class", "likebutton");
   likeButton.setAttribute("href", "#");
   likeCount.setAttribute("class", "count");

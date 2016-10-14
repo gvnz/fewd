@@ -1,0 +1,46 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<form>
+  <input type="search" id="query" placeholder="GitHub username">
+  <input type="submit" id="lookup" value="Lookup">
+</form>
+
+<table>
+  <tr>
+    <th>Name:</th>
+    <td id="user-name"></td>
+  </tr>
+  <tr>
+    <th>Bio:</th>
+    <td id="user-bio"></td>
+  </tr>
+  <tr>
+    <th>Picture:</th>
+    <td id="user-picture"></td>
+  </tr>
+</table>
+
+<script>
+// get userName value using a var
+var userName = document.querySelector("#query");
+
+// isolate button lookUp into a var
+// var lookUp = document.querySelector("#lookup");
+
+// create an event/method for lookUp and open space for the function
+userName.addEventListener("click", apiCall);
+
+function apiCall(event) {
+  var user = "http://proxy.avandamiri.com/get?url=https://api.github.com/users/" + userName;
+  $.get(user, handleResults);
+}
+
+function handleResults(results) {
+  var name = results.name;
+  document.querySelector("#user-name").textContent = name;
+
+}
+
+
+
+</script>

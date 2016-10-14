@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e2e2e7 ;
+}
+
+header {
+  display: block;
+  margin: 30px 20%;
+  height: 70px;
+  min-width: 600px;
+}
+
+h1 {
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  right: 80px;
+}
+
+.todoCount {
+  padding: 10px;
+  font-size: 30px;
+  position: relative;
+  left: 100px;
+}
+
+main {
+
+}
+
+form {
+  display: block;
+  margin: auto 10%;
+  padding: 10px;
+
+
+}
+
+.userWrites {
+padding: 10px;
+width: 400px;
+height: 50px;
+font-size: 20px;
+border-radius: 10px;
+margin: auto 1%;
+box-shadow: 4px 3px 3px gray;
+
+}
+
+.button {
+  color: white;
+  background-color: rgb(58, 71, 241);
+  height: 50px;
+  width: 100px;
+  border-radius: 10px;
+  font-size: 20px;
+  box-shadow: 3px 2px 2px gray;
+}
+
+ul {
+  margin: auto 10%;
+  font-size: 25px;
+  padding: 10px;
+}
+
+li {
+  list-style-type: none;
+}
+input:checked + span {
+  opacity: 0.2;
+  text-decoration: line-through;
+}
+.nothing {
+  position: relative;
+  top: 200px;
+  left: 300px;
+  font-size: 40px;
+  color: rgb(95, 98, 96);
+}

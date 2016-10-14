@@ -40,23 +40,19 @@ var animals = [
   "rooster"
 ];
 
-function sortAnimals(event) {
-    event.preventDefault();
-    a0.textContent = animals[0];
-    a1.textContent = animals[1];
-    a2.textContent = animals[2];
-    a3.textContent = animals[3];
-    a4.textContent = animals[4];
-}
-var a0 = document.querySelector(".a-0");
-var a1 = document.querySelector(".a-1");
-var a2 = document.querySelector(".a-2");
-var a3 = document.querySelector(".a-3");
-var a4 = document.querySelector(".a-4");
 
 var button = document.querySelector("button");
 
-button.addEventListener("click", sortAnimals);
+
+
+button.addEventListener("click", function(event){
+  document.querySelector(".a-0").textContent = animals[0];
+  document.querySelector(".a-1").textContent = animals[1];
+  document.querySelector(".a-2").textContent = animals[2];
+  document.querySelector(".a-3").textContent = animals[3];
+  document.querySelector(".a-4").textContent = animals[4];
+
+});
 
 </script>
 
