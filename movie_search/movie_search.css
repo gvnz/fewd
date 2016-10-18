@@ -10,6 +10,10 @@ body {
   margin: 20px;
 }
 
+header {
+  margin: 40px;
+}
+
 main {
   display: flex;
 }
@@ -22,9 +26,7 @@ main {
 
 .posters {
   flex: 2;
-  /*display: block;*/
 }
-
 
 img {
   width: 180px;

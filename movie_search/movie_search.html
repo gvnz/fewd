@@ -31,67 +31,32 @@
           <div><strong>Plot: </strong><span id="plot"></span></div>
       </section>
 
+  <script type="text/javascript">
+
+  var moviePoster = document.querySelectorAll("img");
 
 
-
-<script type="text/javascript">
-
-var moviePoster = document.querySelectorAll("img");
-
-
-for (var i = 0; i < moviePoster.length; i++) {
-  moviePoster[i].addEventListener("click", movieInfo);
-}
-
-function movieInfo(event) {
-  // event.preventDefault()
-  var movieChoice = event.target;
-  console.log(movieChoice.getAttribute("id"));
-  var movieId = movieChoice.getAttribute("id");
-  var movieCall = "https://omdbapi.com/?i=" + movieId;
-
-  $.get(movieCall, displayResults);
-
-  function displayResults(results) {
-    document.querySelector("#title").textContent = results.Title;
-    document.querySelector("#year").textContent = results.Year;
-    document.querySelector("#rated").textContent = results.Rated;
-    document.querySelector("#runtime").textContent = results.Runtime;
-    document.querySelector("#plot").textContent = results.Plot;
-
+  for (var i = 0; i < moviePoster.length; i++) {
+    moviePoster[i].addEventListener("click", movieInfo);
   }
 
-  // function getMovie(event){
-  //     var clickedMovie = event.target;
-  //     console.log(clickedMovie.getAttribute("id"));
-  //     var imdbID = clickedMovie.getAttribute("id");
-  //     var newQuery = "https://omdbapi.com/?i=" + imdbID;
-  //
-  //     $.get(newQuery, displayResults);
-  //
-  //     function displayResults(results) {
-  //       document.querySelector("#title").textContent = results.Title;
-  //       document.querySelector("#year").textContent = results.Year;
-  //       document.querySelector("#rating").textContent = results.Rated;
-  //       document.querySelector("#runtime").textContent = results.Runtime;
-  //       document.querySelector("#plot").textContent = results.Plot;
-  //     }
+  function movieInfo(event) {
+    // event.preventDefault()
+    var movieChoice = event.target;
+    console.log(movieChoice.getAttribute("id"));
+    var movieId = movieChoice.getAttribute("id");
+    var movieCall = "https://omdbapi.com/?i=" + movieId;
 
+    $.get(movieCall, displayResults);
 
-}
-/*
-there’s one thing I got hung up on that I’ll share with you
-it’s related to wiring up ALL the buttons, not just the one (I think we just wired one up)
-You need to start your javascript like this:   var links = document.querySelectorAll("img");
-
- for (var i = 0; i < links.length; i++) {
-   links[i].addEventListener("click", getMovie);
- }
-
- function getMovie(event){
-
-this grabs all the img elements on the page (all the move poster images) and, using the for loop, adds an event listener to all of them)
-*/
-</script>
-</body>
+    function displayResults(results) {
+      document.querySelector("#title").textContent = results.Title;
+      document.querySelector("#year").textContent = results.Year;
+      document.querySelector("#rated").textContent = results.Rated;
+      document.querySelector("#runtime").textContent = results.Runtime;
+      document.querySelector("#plot").textContent = results.Plot;
+    }
+  }
+  </script>
+  </body>
 </html>
