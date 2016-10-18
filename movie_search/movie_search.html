@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Movie Search</title>
+    <link rel="stylesheet" href="movie_search.css" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <header>
+    <h1>My Favorite Movies</h1>
+    <h2>Click on a movie to see the details</h2>
+
+  </header>
+  <body>
+    <main>
+      <section class="posters">
+          <img src="images/train.jpg" alt="Trainspotting" id="tt0117951">
+          <img src="images/saltofearth.jpg" alt="Salt of the Earth" id="tt3674140">
+          <img src="images/godfather.jpg" alt="The Godfather" id="tt0068646">
+          <img src="images/limitless.jpg" alt="Limitless" id="tt1219289">
+          <img src="images/paristexas.jpg" alt="Paris, Texas" id="tt0087884">
+          <img src="images/thedoors.jpg" alt="The Doors: the movie" id="tt0101761">
+          <img src="images/wild.jpg" alt="Into the Wild" id="tt0758758">
+          <img src="images/orange.jpg" alt="Clockwork Orange" id="tt0066921">
+      </section>
+      <section class="info">
+          <div><strong>Title: </strong><span id="title"></span></div>
+          <div><strong>Year: </strong><span id="year"></span></div>
+          <div><strong>Rated: </strong><span id="rated"></span></div>
+          <div><strong>Runtime: </strong><span id="runtime"></span></div>
+          <div><strong>Plot: </strong><span id="plot"></span></div>
+      </section>
+
+
+
+
+<script type="text/javascript">
+
+var moviePoster = document.querySelectorAll("img");
+
+
+for (var i = 0; i < moviePoster.length; i++) {
+  moviePoster[i].addEventListener("click", movieInfo);
+}
+
+function movieInfo(event) {
+  // event.preventDefault()
+  var movieChoice = event.target;
+  console.log(movieChoice.getAttribute("id"));
+  var movieId = movieChoice.getAttribute("id");
+  var movieCall = "https://omdbapi.com/?i=" + movieId;
+
+  $.get(movieCall, displayResults);
+
+  function displayResults(results) {
+    document.querySelector("#title").textContent = results.Title;
+    document.querySelector("#year").textContent = results.Year;
+    document.querySelector("#rated").textContent = results.Rated;
+    document.querySelector("#runtime").textContent = results.Runtime;
+    document.querySelector("#plot").textContent = results.Plot;
+
+  }
+
+  // function getMovie(event){
+  //     var clickedMovie = event.target;
+  //     console.log(clickedMovie.getAttribute("id"));
+  //     var imdbID = clickedMovie.getAttribute("id");
+  //     var newQuery = "https://omdbapi.com/?i=" + imdbID;
+  //
+  //     $.get(newQuery, displayResults);
+  //
+  //     function displayResults(results) {
+  //       document.querySelector("#title").textContent = results.Title;
+  //       document.querySelector("#year").textContent = results.Year;
+  //       document.querySelector("#rating").textContent = results.Rated;
+  //       document.querySelector("#runtime").textContent = results.Runtime;
+  //       document.querySelector("#plot").textContent = results.Plot;
+  //     }
+
+
+}
+/*
+there’s one thing I got hung up on that I’ll share with you
+it’s related to wiring up ALL the buttons, not just the one (I think we just wired one up)
+You need to start your javascript like this:   var links = document.querySelectorAll("img");
+
+ for (var i = 0; i < links.length; i++) {
+   links[i].addEventListener("click", getMovie);
+ }
+
+ function getMovie(event){
+
+this grabs all the img elements on the page (all the move poster images) and, using the for loop, adds an event listener to all of them)
+*/
+</script>
+</body>
+</html>
