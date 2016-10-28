@@ -21,9 +21,11 @@
       <div class="tweet">
         <img src="pic1.png" alt="pic1">
         <section class="c1">
-          <textarea placeholder="What's tweeting?"></textarea>
-          <span class="maxlenght">140</span>
-          <button href="" class="publish">Tweet</button>
+          <form action="" method="post">
+            <textarea placeholder="What's tweeting?"></textarea>
+            <span class="maxlenght">140</span>
+            <button href="" class="publish" type="submit">Tweet</button>
+          </form>
         </section>
       </div>
       <div>
@@ -108,22 +110,24 @@
 
   img.setAttribute("src", image);
   newRow.setAttribute("class", "row");
-  mainDiv.setAttribute("class", "like");
+  // mainDiv.setAttribute("class", "newdiv");
+
   likeButton.setAttribute("class", "likebutton");
   likeButton.setAttribute("href", "#");
   likeCount.setAttribute("class", "count");
 }
 
+
 // function to create tweet when TWEET is clicked
 var button = document.querySelector(".publish");
 
+button.addEventListener("click", newComment);
 
 function newComment(event) {
   event.preventDefault();
-  createTweet(document.querySelector("textArea").value, "pic2.jpeg");
+  createTweet(document.querySelector("textArea").value, "pic1.png");
 }
 
-button.addEventListener("click", newComment);
 
 // LIKE FEATURE
 // creating variables
@@ -144,6 +148,7 @@ function like(event) {
 likeCount.textContent = parseInt(likeCount.textContent) + 1;
 // this line gets the current content of likeCount and adds 1 to it everytime the function is called (click)
 // parseInt is basically for transforming the content into whole numbers
+
 }
 
 

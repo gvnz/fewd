@@ -22,13 +22,26 @@
           <img src="images/thedoors.jpg" alt="The Doors: the movie" id="tt0101761">
           <img src="images/wild.jpg" alt="Into the Wild" id="tt0758758">
           <img src="images/orange.jpg" alt="Clockwork Orange" id="tt0066921">
+          <img src="images/shallow.jpg" alt="Shallow Grave" id="tt0111149">
+          <img src="images/casino.jpg" alt="Casino" id="tt0112641">
+          <img src="images/airplane.jpg" alt="Airplane" id="tt0080339">
+          <img src="images/apocalypsenow.jpg" alt="Apocalypse Now" id="tt0078788">
+          <img src="images/lockstock.jpg" alt="Lock Stock" id="tt0120735">
+          <img src="images/natural.jpg" alt="Natural Born Killers" id="tt0110632">
+          <img src="images/pinkfloyd.jpg" alt="The Wall" id="tt0084503">
+          <img src="images/pulpfiction.jpg" alt="Pulp Fiction" id="tt0110912">
+          <img src="images/signs.jpg" alt="Signs" id="tt0286106">
+
       </section>
       <section class="info">
           <div><strong>Title: </strong><span id="title"></span></div>
           <div><strong>Year: </strong><span id="year"></span></div>
+          <div><strong>Director: </strong><span id="director"></span></div>
+          <div><strong>Actors: </strong><span id="actors"></span></div>
           <div><strong>Rated: </strong><span id="rated"></span></div>
           <div><strong>Runtime: </strong><span id="runtime"></span></div>
           <div><strong>Plot: </strong><span id="plot"></span></div>
+
       </section>
 
   <script type="text/javascript">
@@ -52,6 +65,8 @@
     function displayResults(results) {
       document.querySelector("#title").textContent = results.Title;
       document.querySelector("#year").textContent = results.Year;
+      document.querySelector("#director").textContent = results.Director;
+      document.querySelector("#actors").textContent = results.Actors;
       document.querySelector("#rated").textContent = results.Rated;
       document.querySelector("#runtime").textContent = results.Runtime;
       document.querySelector("#plot").textContent = results.Plot;
