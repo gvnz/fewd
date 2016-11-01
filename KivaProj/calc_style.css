@@ -43,7 +43,7 @@ img.paraguay {
 p.imgtext {
   position: absolute;
   bottom: 20px;
-  
+
   font-size: 150%;
   color: #fff;
   padding: 0 20px;
@@ -65,6 +65,11 @@ p.imgtext {
   width: 180px;
   text-align: center;
   padding: 0;
+  font-size: 90%
+}
+
+.amount:hover {
+    border: 1px;
 }
 
 .period {
@@ -74,13 +79,12 @@ p.imgtext {
   border-radius: 5px;
   width: 200px;
   text-align: center;
+  font-size: 90%
 }
 
-/*form.input {
-  display: inline-block;
-  margin: 20px;
-  width: 600px;
-}*/
+.period:hover {
+    border: 1px;
+}
 
 select {
   width: 40%;
@@ -88,6 +92,10 @@ select {
   height: 30px;
   font-size: 15px;
   color: green;
+}
+
+select:hover {
+    border: 1px;
 }
 
 .calc {
@@ -98,6 +106,11 @@ select {
   color: green;
   background-color: white;
   font-size: 15px;
+  /*box-shadow: 0px 1px 3px 2px #ccc;*/
+}
+
+.calc:hover {
+    border: 1px;
 }
 
 .disclaimer {
