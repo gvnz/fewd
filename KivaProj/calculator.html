@@ -279,7 +279,7 @@
           <option value="ZW">Zimbabwe</option>
         </select>
 
-        <input class="calc" type="submit" value="Calculate">
+        <input class="calc" type="button" value="Calculate">
       </form>
     </div>
 
@@ -318,38 +318,39 @@
               // conditional for active portfolio_yield
               if (partner.portfolio_yield > 10) {
                 console.log(">>>",partners[i], partnerCountries[j]);
-                var portYield = partner.porfolio_yield;
-                console.log("portYield", partner.portfolio_yield);
-                var p = document.createElement("p");
-                var p2 = document.createElement("p");
-                var p3 = document.createElement("p");
-                console.log("portYield", portYield);
+                var portYield = partner.portfolio_yield;
+                var p = document.createElement("p.partnername");
+                p.textContent = "Field Partner: " + partner.name;
+                div.appendChild(p);
+                var p2 = document.createElement("p.portyield");
+                p2.textContent = "Average cost to the borrower (% per year): " + partner.portfolio_yield;
+                div.appendChild(p2);
+                var p3 = document.createElement("p.url");
+                p3.textContent = "Website: " + partner.url;
+                div.appendChild(p3);
+                // console.log(">>portYield", portYield);
                 var portYieldYearly = portYield / 100;
                 console.log("portYieldYearly", portYieldYearly);
 
                 var portYieldMonthly = portYieldYearly / 12;
-                console.log(portYieldMonthly);
+                console.log("monthly", portYieldMonthly);
                 var calculus = amount * period * portYieldMonthly;
                 console.log("calculus", calculus);
-                p.textContent = partner.name;
-                div.appendChild(p);
-                p2.textContent = partner.portfolio_yield;
-                div.appendChild(p2);
-                p3.textContent = partner.url;
-                div.appendChild(p3);
+                // p.textContent = partner.name;
+
               }
             }
-            else if (partner.status == "closed") {
-              var closed = document.createElement("p");
-              p.textContent = partner.name;
-              div.appendChild(p);
-              closed.textContent = "closed";
-              div.appendChild(closed);
-            }
-            else {
-                closed.textContent = "We are sorry, but currently Kiva does not have a Field Partner in the selected country. Understand what is necessary to become a Field Partner at Kiva: www.kiva.org/where-kiva-works/partner";
-              div.appendChild(closed);
-            }
+            // else if (partner.status == "closed") {
+            //   var closed = document.createElement("p");
+            //   p.textContent = partner.name;
+            //   div.appendChild(p);
+            //   closed.textContent = "closed";
+            //   div.appendChild(closed);
+            // }
+            // else {
+            //     closed.textContent = "We are sorry, but currently Kiva does not have a Field Partner in the selected country. Understand what is necessary to become a Field Partner at Kiva: www.kiva.org/where-kiva-works/partner";
+            //   div.appendChild(closed);
+            // }
 
           }
         }

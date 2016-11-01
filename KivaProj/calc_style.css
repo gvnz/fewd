@@ -113,8 +113,27 @@ select:hover {
     border: 1px;
 }
 
+div#matches {
+  margin: 30px;
+  font-size: 20px;
+
+}
+
+p.partnername {
+  display: block;
+}
+
+p.portyield {
+  display: block;
+}
+
+p.url {
+  display: block;
+}
+
 .disclaimer {
   font-size: 12px;
   margin: 20px;
 }
+
 @media (max-width: 600px)
