@@ -319,27 +319,37 @@
               if (partner.portfolio_yield > 10) {
                 console.log(">>>",partners[i], partnerCountries[j]);
                 var portYield = partner.portfolio_yield;
-                var p = document.createElement("p.partnername");
+
+                var p = document.createElement("p");
+                p.className = "partnername";
                 p.textContent = "Field Partner: " + partner.name;
                 div.appendChild(p);
-                var p2 = document.createElement("p.portyield");
+
+                var p2 = document.createElement("p");
+                p.className = "portyield";
                 p2.textContent = "Average cost to the borrower (% per year): " + partner.portfolio_yield;
                 div.appendChild(p2);
-                var p3 = document.createElement("p.url");
+
+                var p3 = document.createElement("p");
+                p.className = "url";
                 p3.textContent = "Website: " + partner.url;
                 div.appendChild(p3);
-                // console.log(">>portYield", portYield);
+
                 var portYieldYearly = portYield / 100;
                 console.log("portYieldYearly", portYieldYearly);
-
                 var portYieldMonthly = portYieldYearly / 12;
                 console.log("monthly", portYieldMonthly);
                 var calculus = amount * period * portYieldMonthly;
                 console.log("calculus", calculus);
-                // p.textContent = partner.name;
+                var result = document.createElement("p");
+                p.className = "result";
+                result.textContent = "Approximate monthly installment: " + calculus;
+                div.appendChild(result);
+                var br = document.createElement("br");
+                div.appendChild(br);
 
               }
-            }
+
             // else if (partner.status == "closed") {
             //   var closed = document.createElement("p");
             //   p.textContent = partner.name;
@@ -347,14 +357,16 @@
             //   closed.textContent = "closed";
             //   div.appendChild(closed);
             // }
-            // else {
-            //     closed.textContent = "We are sorry, but currently Kiva does not have a Field Partner in the selected country. Understand what is necessary to become a Field Partner at Kiva: www.kiva.org/where-kiva-works/partner";
-            //   div.appendChild(closed);
-            // }
-
+            else (selected ==! partnerCountry.iso_code) {
+                var noPartner = document.createElement("p");
+                noPartner.className = "nopartner";
+                noPartner.textContent = "We are sorry, but currently Kiva does not have a Field Partner in the selected country. Understand what is necessary to become a Field Partner at Kiva: www.kiva.org/where-kiva-works/partner";
+                div.appendChild(noPartner);
+            }
           }
         }
       }
+    }
 
       function getData(event) {
         event.preventDefault();
