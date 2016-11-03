@@ -53,8 +53,12 @@ p.imgtext {
   background: rgba(0, 0, 0, 0.7);`
 }
 
+h3.calculator {
+  margin: 2% 26%;
+  width: 70%;
+}
 .divamount {
-  margin: 50px auto;
+  margin: 2% 25%;
   width: 70%;
 }
 
@@ -114,8 +118,8 @@ select:hover {
 }
 
 div#matches {
-  margin: 30px;
-  font-size: 20px;
+  margin: 5% 20%;
+  font-size: 18px;
 
 }
 

@@ -7,7 +7,9 @@
     <link href="calc_style.css" rel="stylesheet" type="text/css">
   </head>
   <header>
+    <a href="www.kiva.org">
     <img class="logo" src="kivalogo.jpg" alt="logokiva">
+    </a>
     <!-- <h1>Borrow</h1> -->
   </header>
   <body>
@@ -21,12 +23,15 @@
         <p class="imgtext">Yes to empowerment.</p>
       </div>
     </div>
+    <h3 class="calculator">Set the amount you wish to borrow, the period and the country where you are.</h3>
+    <form class="input">
     <div class="divamount">
+
       <input class="amount" type="number" placeholder="Loan amount (Max. 10.000)" required="required" max="10000">
       <span>US Dollars</span>
       <input class="period" type="number" placeholder="Loan Period  (Max. 72)" required="required" max="72">
       <span>Months</span>
-      <form class="input">
+
         <select>
           <option value="AF">Afghanistan</option>
           <option value="AX">Åland Islands</option>
@@ -280,18 +285,18 @@
         </select>
 
         <input class="calc" type="button" value="Calculate">
-      </form>
     </div>
 
     <div id="matches">
 
     </div>
+  </form>
 
     <p class="disclaimer">Disclaimer: This webpage is not a Kiva product nor is intended to represent the organization in any mean. It aims simply to provide a rough estimative of loan installments through Kiva's Field Partners worldwide. It has no obligation to comply with any domestic regulations in any specific country. Results provided or any information taken out of this webpage cannot be used as an argument basis to a loan request. All loans requests must be approved by Kiva and its representatives and by them alone. All images are provided by Kiva to advance its mission of connecting people around the world through lending to alleviate poverty.</p>
 
     <script>
       var selected;
-
+      var form = document.querySelector("form");
       var calcSearch = document.querySelector(".calc");
       var amount = document.querySelector(".amount");
       var period = document.querySelector(".period");
@@ -303,6 +308,7 @@
       function getPartners(results) {
         // console.log(results.partners);
         var partners = results.partners;
+        form.reset();
 
         // Loop through all partners
         for (var i = 0; i < partners.length; i++) {
@@ -326,43 +332,43 @@
                 div.appendChild(p);
 
                 var p2 = document.createElement("p");
-                p.className = "portyield";
-                p2.textContent = "Average cost to the borrower (% per year): " + partner.portfolio_yield;
+                p2.className = "portyield";
+                p2.textContent = "Average cost to the borrower: " + partner.portfolio_yield + "% (per year)";
                 div.appendChild(p2);
 
                 var p3 = document.createElement("p");
-                p.className = "url";
+                p3.className = "url";
                 p3.textContent = "Website: " + partner.url;
                 div.appendChild(p3);
 
                 var portYieldYearly = portYield / 100;
-                console.log("portYieldYearly", portYieldYearly);
                 var portYieldMonthly = portYieldYearly / 12;
-                console.log("monthly", portYieldMonthly);
-                var calculus = amount * period * portYieldMonthly;
-                console.log("calculus", calculus);
+                var calculus = amount.value * (1 + portYieldMonthly * period.value) / period.value;
+                var caseLimit = calculus.toFixed(0);
+
                 var result = document.createElement("p");
-                p.className = "result";
-                result.textContent = "Approximate monthly installment: " + calculus;
+                result.className = "result";
+                result.textContent = "Approximate monthly installment: US$ " + caseLimit;
                 div.appendChild(result);
                 var br = document.createElement("br");
                 div.appendChild(br);
-
               }
 
-            // else if (partner.status == "closed") {
-            //   var closed = document.createElement("p");
-            //   p.textContent = partner.name;
-            //   div.appendChild(p);
-            //   closed.textContent = "closed";
-            //   div.appendChild(closed);
+            // else if (partner.status === "closed") {
+            //   var offName = document.createElement("p");
+            //   offName.className = "offName";
+            //   offName.textContent = "Partner: " + partner.name + " is no longer working with Kiva.";
+            //   div.appendChild(offName);
+            //   }
+
+            // else if (selected != partnerCountry.iso_code) {
+            // else {
+            //     var noPartner = document.createElement("p");
+            //     noPartner.className = "nopartner";
+            //     noPartner.textContent = "We are sorry, but, currently, Kiva does not have a Field Partner in the selected country. Understand what is necessary to become a Field Partner at Kiva: www.kiva.org/where-kiva-works/partner";
+            //     div.appendChild(noPartner);
             // }
-            else (selected ==! partnerCountry.iso_code) {
-                var noPartner = document.createElement("p");
-                noPartner.className = "nopartner";
-                noPartner.textContent = "We are sorry, but currently Kiva does not have a Field Partner in the selected country. Understand what is necessary to become a Field Partner at Kiva: www.kiva.org/where-kiva-works/partner";
-                div.appendChild(noPartner);
-            }
+
           }
         }
       }
