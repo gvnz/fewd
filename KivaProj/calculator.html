@@ -309,7 +309,7 @@
       function getPartners(results) {
         // console.log(results.partners);
         var partners = results.partners;
-        form.reset();
+
 
         // Loop through all partners
         for (var i = 0; i < partners.length; i++) {
@@ -345,6 +345,7 @@
                 var portYieldYearly = portYield / 100;
                 var portYieldMonthly = portYieldYearly / 12;
                 var calculus = amount.value * (1 + portYieldMonthly * period.value) / period.value;
+                console.log(calculus);
                 var caseLimit = calculus.toFixed(0);
 
                 var result = document.createElement("p");
@@ -353,6 +354,7 @@
                 div.appendChild(result);
                 var br = document.createElement("br");
                 div.appendChild(br);
+                form.reset();
               }
 
             // else if (partner.status === "closed") {
