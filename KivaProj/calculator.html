@@ -285,6 +285,8 @@
         <input class="calc" type="button" value="Calculate">
       </div>
       <div id="matches">
+        <!-- <div id="submatches"> -->
+        <!-- </div> -->
       </div>
     </form>
 
@@ -297,7 +299,7 @@
       var amount = document.querySelector(".amount");
       var period = document.querySelector(".period");
       var country = document.querySelector("select");
-      var div = document.querySelector("#matches");
+      var matches = document.querySelector("#matches");
       // var matches = document.querySelector("#matches")
       calcSearch.addEventListener("click", getData);
 
@@ -321,6 +323,10 @@
               if (partner.portfolio_yield > 10) {
                 console.log(">>>",partners[i], partnerCountries[j]);
                 var portYield = partner.portfolio_yield;
+
+                var div = document.createElement("div");
+                div.className = "submatches";
+                matches.appendChild(div);
 
                 var p = document.createElement("p");
                 p.className = "partnername";
@@ -348,7 +354,11 @@
                 result.textContent = "Approximate monthly installment: US$ " + caseLimit;
                 div.appendChild(result);
                 var br = document.createElement("br");
-                div.appendChild(br);
+                // div.appendChild(br);
+
+
+
+
 
               }
 
