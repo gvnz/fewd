@@ -293,6 +293,7 @@
     <p class="disclaimer">Disclaimer: This webpage is not a Kiva product nor is intended to represent the organization in any mean. It aims simply to provide a rough estimative of loan installments through Kiva's Field Partners worldwide. It has no obligation to comply with any domestic regulations in any specific country. Results provided or any information taken out of this webpage cannot be used as an argument basis to a loan request. All loans requests must be approved by Kiva and its representatives and by them alone. All images are provided by Kiva to advance its mission of connecting people around the world through lending to alleviate poverty.</p>
 
     <script>
+
       var selected;
       var form = document.querySelector("form");
       var calcSearch = document.querySelector(".calc");
@@ -303,7 +304,16 @@
       // var matches = document.querySelector("#matches")
       calcSearch.addEventListener("click", getData);
 
+      function getData(event) {
+        event.preventDefault();
+        selected = country.value;
+        $.get("https://api.kivaws.org/v1/partners.json", getPartners);
+
+      }
+
+
       function getPartners(results) {
+
         // console.log(results.partners);
         var partners = results.partners;
 
@@ -354,11 +364,6 @@
                 result.textContent = "Approximate monthly installment: US$ " + caseLimit;
                 div.appendChild(result);
                 var br = document.createElement("br");
-                // div.appendChild(br);
-
-
-
-
 
               }
 
@@ -378,18 +383,14 @@
             // }
 
           }
+
         }
+
       }
     form.reset();
     }
 
-      function getData(event) {
-        event.preventDefault();
-        selected = country.value;
-        // console.log(amount.value, period.value, country.value);
-        $.get("https://api.kivaws.org/v1/partners.json", getPartners);
 
-      }
-    </script>
+  </script>
   </body>
 </html>

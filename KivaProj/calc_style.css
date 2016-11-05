@@ -52,7 +52,7 @@ p.imgtext {
   position: absolute;
   bottom: 20px;
 
-  font-size: 150%;
+  font-size: 200%;
   color: #fff;
   padding: 0 20px;
   width: 40%;
@@ -62,7 +62,7 @@ p.imgtext {
 }
 
 h1.headline {
-  margin: 10px auto;
+  margin: 30px auto;
   width: 100%;
   display: block;
   text-align: center;
@@ -175,13 +175,13 @@ p.result {
   margin: 20px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
 p.imgtext {
   position: absolute;
   bottom: 20px;
 
-  font-size: 15px;
+  font-size: 130%;
   color: #fff;
   padding: 0 20px;
   width: 40%;
@@ -203,5 +203,10 @@ div.matches {
 }
 .disclaimer {
   font-size: 10px;
+}
+}
+@media (max-width: 450px) {
+p.imgtext {
+  font-size: 100%;
 }
 }
