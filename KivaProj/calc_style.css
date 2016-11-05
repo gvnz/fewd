@@ -136,23 +136,38 @@ select:hover {
 }
 
 div#matches {
-  margin: 5% 20%;
+  margin: 0% 15%;
   font-size: 18px;
   width: 75%
 }
-div#submatches {
-  background-color: red;
+
+div.submatches {
+  background-color: rgb(57, 106, 58);
+  margin: 10px auto;
+  /*width: 70%;*/
+  border-radius: 10px;
+  padding: 15px;
 }
+
+
 p.partnername {
   display: block;
+  margin: 10px;
 }
 
 p.portyield {
   display: block;
+  margin: 10px;
 }
 
 p.url {
   display: block;
+  margin: 10px;
+}
+
+p.result {
+  display: block;
+  margin: 10px;
 }
 
 .disclaimer {
@@ -182,7 +197,7 @@ h1.headline {
 h3.calculator {
   font-size: 15px;
 }
-div#matches {
+div.matches {
   font-size: 18px;
   width: 75%
 }
