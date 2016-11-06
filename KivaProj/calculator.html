@@ -293,7 +293,7 @@
     <p class="disclaimer">Disclaimer: This webpage is not a Kiva product nor is intended to represent the organization in any mean. It aims simply to provide a rough estimative of loan installments through Kiva's Field Partners worldwide. It has no obligation to comply with any domestic regulations in any specific country. Results provided or any information taken out of this webpage cannot be used as an argument basis to a loan request. All loans requests must be approved by Kiva and its representatives and by them alone. All images are provided by Kiva to advance its mission of connecting people around the world through lending to alleviate poverty.</p>
 
     <script>
-
+      // storing document values into variables
       var selected;
       var form = document.querySelector("form");
       var calcSearch = document.querySelector(".calc");
@@ -301,23 +301,19 @@
       var period = document.querySelector(".period");
       var country = document.querySelector("select");
       var matches = document.querySelector("#matches");
-      // var matches = document.querySelector("#matches")
+      // creating event listener, which will trigger the API call function
       calcSearch.addEventListener("click", getData);
-
+      // API call function
       function getData(event) {
         event.preventDefault();
         selected = country.value;
+        //jquery will get API and trigger the partners function
         $.get("https://api.kivaws.org/v1/partners.json", getPartners);
-
       }
-
-
+      //working with the API results
       function getPartners(results) {
-
-        // console.log(results.partners);
+        //unpacking the results
         var partners = results.partners;
-
-
         // Loop through all partners
         for (var i = 0; i < partners.length; i++) {
           var partner = partners[i];
@@ -325,49 +321,45 @@
           // loop thru all countries
           for (var j = 0; j < partnerCountries.length; j++) {
             var partnerCountry = partnerCountries[j];
-
-            // create conditional for matching countries
+            //conditional for matching countries
             if (selected === partnerCountry.iso_code) {
-
               // conditional for active portfolio_yield
               if (partner.portfolio_yield > 10) {
-                console.log(">>>",partners[i], partnerCountries[j]);
+                //grab average cost to the borrower
                 var portYield = partner.portfolio_yield;
-
+                // create a div to store new elements
                 var div = document.createElement("div");
                 div.className = "submatches";
                 matches.appendChild(div);
-
+                // create a child el for the Field Partner
                 var p = document.createElement("p");
                 p.className = "partnername";
                 p.textContent = "Field Partner: " + partner.name;
                 div.appendChild(p);
-
+                // create a child el for the Average Cost
                 var p2 = document.createElement("p");
                 p2.className = "portyield";
                 p2.textContent = "Average cost to the borrower: " + partner.portfolio_yield + "% (per year)";
                 div.appendChild(p2);
-
+                // create a child el for the Website
                 var p3 = document.createElement("p");
                 p3.className = "url";
                 p3.textContent = "Website: " + partner.url;
                 div.appendChild(p3);
-
+                // doing the math
                 var portYieldYearly = portYield / 100;
                 var portYieldMonthly = portYieldYearly / 12;
                 var calculus = amount.value * (1 + portYieldMonthly * period.value) / period.value;
-                console.log(calculus);
                 var caseLimit = calculus.toFixed(0);
-
+                // create a child el for the calculus result
                 var result = document.createElement("p");
                 result.className = "result";
                 result.textContent = "Approximate monthly installment: US$ " + caseLimit;
                 div.appendChild(result);
-                var br = document.createElement("br");
-
               }
 
-            // else if (partner.status === "closed") {
+
+            // else  {
             //   var offName = document.createElement("p");
             //   offName.className = "offName";
             //   offName.textContent = "Partner: " + partner.name + " is no longer working with Kiva.";
@@ -388,6 +380,7 @@
 
       }
     form.reset();
+
     }
 
 
