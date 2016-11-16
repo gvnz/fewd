@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Kiva</title>
+    <title>Kiva - Borrower's Calculator</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link href="calc_style.css" rel="stylesheet" type="text/css">
   </head>
@@ -16,7 +16,7 @@
     <div class="firstdiv">
       <div class="divghana">
         <img class="ghana" src="sanfrancisco.jpg" alt="Ghana">
-        <p class="imgtext">No to patronizing.</p>
+        <p class="imgtext">No to handouts.</p>
       </div>
       <div class="divparaguay">
         <img class="paraguay" src="paraguay2.jpg" alt="paraguay">
@@ -294,13 +294,13 @@
 
     <script>
       // storing document values into variables
-      var selected;
       var form = document.querySelector("form");
       var calcSearch = document.querySelector(".calc");
       var amount = document.querySelector(".amount");
       var period = document.querySelector(".period");
       var country = document.querySelector("select");
       var matches = document.querySelector("#matches");
+      var selected;
       // creating event listener, which will trigger the API call function
       calcSearch.addEventListener("click", getData);
       // API call function
@@ -314,11 +314,11 @@
       function getPartners(results) {
         //unpacking the results
         var partners = results.partners;
-        // Loop through all partners
+        // loop through all partners
         for (var i = 0; i < partners.length; i++) {
           var partner = partners[i];
-          var partnerCountries = partner.countries;
           // loop thru all countries
+          var partnerCountries = partner.countries;
           for (var j = 0; j < partnerCountries.length; j++) {
             var partnerCountry = partnerCountries[j];
             //conditional for matching countries
@@ -331,17 +331,17 @@
                 var div = document.createElement("div");
                 div.className = "submatches";
                 matches.appendChild(div);
-                // create a child el for the Field Partner
+                // create a child for the Field Partner
                 var p = document.createElement("p");
                 p.className = "partnername";
                 p.textContent = "Field Partner: " + partner.name;
                 div.appendChild(p);
-                // create a child el for the Average Cost
+                // create a child for the Average Cost
                 var p2 = document.createElement("p");
                 p2.className = "portyield";
                 p2.textContent = "Average cost to the borrower: " + partner.portfolio_yield + "% (per year)";
                 div.appendChild(p2);
-                // create a child el for the Website
+                // create a child for the Website
                 var p3 = document.createElement("p");
                 p3.className = "url";
                 p3.textContent = "Website: " + partner.url;
@@ -351,7 +351,7 @@
                 var portYieldMonthly = portYieldYearly / 12;
                 var calculus = amount.value * (1 + portYieldMonthly * period.value) / period.value;
                 var caseLimit = calculus.toFixed(0);
-                // create a child el for the calculus result
+                // create a child for the calculus result
                 var result = document.createElement("p");
                 result.className = "result";
                 result.textContent = "Approximate monthly installment: US$ " + caseLimit;
